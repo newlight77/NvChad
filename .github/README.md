@@ -28,6 +28,12 @@
 [![Telegram](https://img.shields.io/badge/Telegram-blue.svg?style=flat-square&logo=Telegram&logoColor=white)](https://t.me/DE_WM)
 
   </div>
+  
+## Install
+
+```bash
+git clone https://github.com/newlight77/NvChad ~/.config/nvim --depth 1 ; nvim
+```
 
 ## Showcase
 
