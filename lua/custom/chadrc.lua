@@ -9,6 +9,10 @@ M.options = {
    user = function()
        require("custom.themes.parisbynight")
    end,
+   nvChad = {
+      update_url = "https://github.com/newlight77/NvChad",
+      update_branch = "main",
+   },
 }
 
 M.ui = {
@@ -22,16 +26,22 @@ M.plugins = {
    override = {
       ["goolord/alpha-nvim"] = {
          disable = false,
-         config = function() require('custom.plugins.alpha') end
+         config = function()
+           require('plugins.configs.alpha')
+           require('custom.plugins.alpha')
+         end
       },
       ["nvim-treesitter/nvim-treesitter"] = {
          ensure_installed = { "lua", "html", "css" },
       },
       ["norcalli/nvim-colorizer.lua"] = {
-         config = function() require('custom.plugins.colorizer') end
+         config = function()
+           require('plugins.configs.others')
+           require('custom.plugins.colorizer')
+         end
       },
       ["nvim-telescope/telescope-media-files.nvim"] = {
-         config = function() 
+         config = function()
             local status_ok, telescope = pcall(require, "telescope")
             if status_ok then
                -- telescope.load_extension('media_files')
