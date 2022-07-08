@@ -7,8 +7,8 @@ M.base_30 = {
     black = "#101010", --  nvim bg
     black2 = "#282828",
     one_bg = "#3e3e3e",
-    one_bg2 = "#454545",
-    one_bg3 = "#5c5c5c",
+    one_bg2 = "#766656",
+    one_bg3 = "#5c6c4c",
     grey = "#6f6c6c",
     grey_fg = "#9a9999",
     grey_fg2 = "#736666",
@@ -20,7 +20,7 @@ M.base_30 = {
     green = "#00e756",
     vibrant_green = "#10f766",
     blue = "#29adff",
-    nord_blue = "#5c6ab2",
+    nord_blue = "#468ae2",
     yellow = "#fff024",
     sun = "#fff82c",
     purple = "#a79ac0",
@@ -29,20 +29,20 @@ M.base_30 = {
     orange = "#ffa300",
     cyan = "#29adff",
     statusline_bg = "#181818",
-    lightbg = "#272727",
+    lightbg = "#494949",
     pmenu_bg = "#5c6ab2",
     folder_bg = "#29adff",
  }
- 
+
  M.base_16 = {
     base00 = "#101010",
-    base01 = "#171717",
-    base02 = "#1e1e1e",
-    base03 = "#252525",
-    base04 = "#2c2c2c",
-    base05 = "#d8d9dd",
-    base06 = "#d2d3d7",
-    base07 = "#cccdd1",
+    base01 = "#774727",
+    base02 = "#4e3e3e",
+    base03 = "#4a7a4a",
+    base04 = "#5c8cac",
+    base05 = "#58a9ad",
+    base06 = "#e2d3cf",
+    base07 = "#ffe4f5",
     base08 = "#ffb20f",
     base09 = "#ff004d",
     base0A = "#be620a",
@@ -52,14 +52,14 @@ M.base_30 = {
     base0E = "#ff4394",
     base0F = "#ffccaa",
  }
- 
+
  M.polish_hl = {
     TSParameter = { fg = M.base_30.orange },
     TSKeywordReturn = { fg = M.base_30.cyan },
     TSConditional = { fg = M.base_30.cyan },
     PmenuSel = { bg = M.base_30.blue },
  }
- 
+
  vim.opt.bg = "dark"
 
 return M
