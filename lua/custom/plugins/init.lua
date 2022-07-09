@@ -74,7 +74,8 @@ return {
                 -- telescope.extensions.media_files.media_files()
             end
         end
-        },
-    ["edluffy/hologram.nvim"] = {}
+    },
+    ["edluffy/hologram.nvim"] = {},
+    ["jose-elias-alvarez/null-ls.nvim"] = { config = function() require('custom.plugins.null-ls') end },
 
 }
