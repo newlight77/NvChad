@@ -44,13 +44,13 @@ M.general = {
     },
 }
 
-M.alpha = { 
+M.alpha = {
     n = {
         ["<leader>a"] = {"<cmd>Alpha<cr>", "   toggle alpha"},
     },
 }
 
-M.packer = { 
+M.packer = {
     n = {
         ["<leader>p"] = {"", "  Packer"},
         ["<leader>pc"] = {"<cmd>PackerCompile<cr>", "Packer compile"},
@@ -64,7 +64,7 @@ M.packer = {
 M.lspconfig = {
     -- See `<cmd> :help vim.lsp.*` for documentation on any of the below functions
     n = {
-        ["<leader>w"] = { "", "    LSP" },
+        ["<leader>l"] = { "", "    LSP" },
         ["<leader>lD"] = { function() vim.lsp.buf.declaration() end, "   lsp declaration"  },
         ["<leader>ld"] = {  function() vim.lsp.buf.definition() end, "   lsp definition" },
         ["<leader>lh"] = { function() vim.lsp.buf.hover() end, "   lsp hover"},

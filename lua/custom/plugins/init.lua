@@ -1,8 +1,12 @@
 
 return {
-    -- ["goolord/alpha-nvim"] = {
-    --     disable = false,
-    -- },
+    ["goolord/alpha-nvim"] = {
+        disable = false,
+        config = function()
+            require('plugins.configs.alpha')
+            require('custom.plugins.alpha')
+        end
+    },
     ["lewis6991/impatient.nvim"] = { },
     ["folke/trouble.nvim"] = {
         requires = "kyazdani42/nvim-web-devicons",
@@ -45,15 +49,32 @@ return {
             vim.defer_fn(function() require('custom.plugins.neoscroll') end, 2000)
         end
     },
-    -- ["norcalli/nvim-colorizer.lua"] = { 
-    --     config = function() require('custom.plugins.colorizer') end
-    -- },
+    ["norcalli/nvim-colorizer.lua"] = {
+        config = function()
+            require('plugins.configs.others')
+            require('custom.plugins.colorizer')
+        end
+    },
     ["iamcco/markdown-preview.nvim"] = {},
     ["nvim-telescope/telescope-media-files.nvim"] = {
-        -- config = function() 
-        --     require('telescope').load_extension('media_files')
-        -- end
-    },
+        config = function()
+            local status_ok, telescope = pcall(require, "telescope")
+            if status_ok then
+                -- telescope.load_extension('media_files')
+                telescope.setup {
+                    extensions = {
+                    media_files = {
+                        -- filetypes whitelist
+                        -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
+                        filetypes = {"png", "webp", "jpg", "jpeg", "pdf"},
+                        find_cmd = "fp" -- find command (defaults to `fd`)
+                    }
+                    },
+                }
+                -- telescope.extensions.media_files.media_files()
+            end
+        end
+        },
     ["edluffy/hologram.nvim"] = {}
 
- }
+}
