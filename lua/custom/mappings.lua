@@ -66,13 +66,13 @@ M.lspconfig = {
     n = {
         ["<leader>l"] = { "", "    LSP" },
         ["<leader>lD"] = { function() vim.lsp.buf.declaration() end, "   lsp declaration"  },
-        ["<leader>ld"] = {  function() vim.lsp.buf.definition() end, "   lsp definition" },
+        ["<leader>ld"] = { function() vim.lsp.buf.definition() end, "   lsp definition" },
         ["<leader>lh"] = { function() vim.lsp.buf.hover() end, "   lsp hover"},
         ["<leader>li"] = { function() vim.lsp.buf.implementation() end, "   lsp implementation" },
         ["<leader>ls"] = { function() vim.lsp.buf.signature_help() end, "   lsp signature_help" },
         ["<leader>lt"] = { function() vim.lsp.buf.type_definition() end, "   lsp definition type" },
         ["<leader>lr"] = { function() require("nvchad.ui.renamer").open() end, "   lsp rename" },
-        ["<leader>lc"] = {  function() vim.lsp.buf.code_action() end, "   lsp code_action" },
+        ["<leader>lc"] = { function() vim.lsp.buf.code_action() end, "   lsp code_action" },
         ["<leader>gr"] = { function() vim.lsp.buf.references() end, "   lsp references" },
         ["<leader>q"] = { function() vim.diagnostic.open_float() end, "   floating diagnostic" },
         ["<leader>lQ"] = { function() vim.diagnostic.setloclist() end, "   diagnostic setloclist" },
@@ -111,6 +111,16 @@ M.telescope = {
         ["<leader>T"] = { "", "  themes" },
         ["<leader>TT"] = {"<cmd> Telescope themes <CR>", "   nvchad themes"}
     }
+}
+
+M.nvimtree = {
+
+    n = {
+        -- toggle
+        ["<C-n>"] = { "<cmd> NvimTreeToggle <CR>", "   toggle nvimtree" },
+        -- focus
+        ["<leader>e"] = { "<cmd> NvimTreeFocus <CR>", "   focus nvimtree" },
+    },
 }
 
 M.nvterm = {
@@ -153,6 +163,12 @@ M.blankline = {
             end,
             "   Jump to current_context",
         },
+    },
+}
+
+M.zenmode = {
+    n = {
+        ["<leader>z"] = { "<cmd> :ZenMode <CR>", "  toggle Zen-Mode" },
     },
 }
 
