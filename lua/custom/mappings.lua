@@ -3,6 +3,7 @@ local M = {}
 M.disabled = {
     n = {
         ["<leader>bc"] = { "" },
+        ["<leader>ca"] = { "" },
         ["<leader>h"] = { "" },
         ["<leader>v"] = { "" },
         ["<leader>cm"] = { "" },
@@ -38,15 +39,13 @@ M.general = {
         ["<leader>Tt"] = { function() require("base46").toggle_theme() end, "   toggle theme", },
         -- update nvchad
         ["<leader>U"] = { "<cmd> :NvChadUpdate <CR>", "   update nvchad" },
-        -- open current file in browser
-        ["<leader>b"] = { "<cmd> :exe ':silent !brave %'<CR> ", "   open current file in browser" },
 
     },
 }
 
 M.alpha = {
     n = {
-        ["<leader>a"] = {"<cmd>Alpha<cr>", "   toggle alpha"},
+        -- ["<leader>a"] = {"<cmd>Alpha<cr>", "   toggle alpha"},
     },
 }
 
@@ -60,6 +59,19 @@ M.packer = {
         ["<leader>pu"] = {"<cmd>PackerUpdate<cr>", "packer update"},
     },
 }
+
+M.comment = {
+
+   -- toggle comment in both modes
+    n = {
+        ["<leader>/"] = { function() require("Comment.api").toggle_current_linewise()end, "蘒  toggle comment" },
+    },
+
+    v = {
+        ["<leader>/"] = { "<ESC><cmd>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>", "蘒  toggle comment" },
+    },
+}
+
 
 M.lspconfig = {
     -- See `<cmd> :help vim.lsp.*` for documentation on any of the below functions
@@ -153,7 +165,7 @@ M.whichkey = {
 
 M.blankline = {
     n = {
-        ["<leader>B"] = {
+        ["<leader>J"] = {
             function()
                 local ok, start = require("indent_blankline.utils").get_current_context(vim.g.indent_blankline_context_patterns, vim.g.indent_blankline_use_treesitter_scope)
                 if ok then
@@ -163,6 +175,22 @@ M.blankline = {
             end,
             "   Jump to current_context",
         },
+    },
+}
+
+M.trouble = {
+    n = {
+        ["<c-t>"] = { "<cmd>lua require('trouble.providers.telescope').open_with_trouble()<cr>", "  open with Trouble"},
+        ["<leader>B"] = { "", "  Trouble"},
+        ["<leader>Bx"] = { "<cmd>Trouble<cr>", "  Toggle Trouble"},
+        ["<leader>Bw"] = { "<cmd>Trouble workspace_diagnostics<cr>", "  Trouble workspace diagnostics"},
+        ["<leader>Bd"] = { "<cmd>Trouble document_diagnostics<cr>", "  Trouble document diagnostics"},
+        ["<leader>Bl"] = { "<cmd>Trouble loclist<cr>", "  Trouble loclist"},
+        ["<leader>Bq"] = { "<cmd>Trouble quickfix<cr>", "  Trouble quick fix"},
+        ["<leader>Br"] = { "<cmd>Trouble lsp_references<cr>", "  Trouble LSP references"},
+    },
+    i = {
+        ["<c-t>"] = { "<cmd>lua require('trouble.providers.telescope').open_with_trouble()<cr>", "  open with Trouble"},
     },
 }
 
