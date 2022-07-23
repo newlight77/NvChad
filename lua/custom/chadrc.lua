@@ -23,6 +23,11 @@ M.mappings = require "custom.mappings"
 
 M.plugins = {
    user = require "custom.plugins",
+   options = {
+      lspconfig = {
+         setup_lspconf = "custom.plugins.lspconfig",
+      },
+   },
    override = {
       -- ["goolord/alpha-nvim"] = {
       --    disable = false,
